@@ -55,12 +55,14 @@ def main():
 # This function will load the users.csv file into the users table, discarding any records with incomplete data
 def load_and_clean_users(file_path):
 
+    '''
     print(file_path)
     df = pd.read_csv(file_path)
     df = df.dropna()
     conn = sqlite3.connect('users.db')
     df.to_sql('users', conn, if_exists='replace', index=False)
-
+    '''
+    print("TODO: load_call_logs")
 
 
 # This function will load the callLogs.csv file into the callLogs table, discarding any records with incomplete data
