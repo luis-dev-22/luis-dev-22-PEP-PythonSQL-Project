@@ -1,7 +1,6 @@
 import csv
 import os
 import sqlite3
-import pandas as pd
 
 # Resolve the resources folder relative to this file, so paths work
 # no matter what directory the script is run from.
@@ -56,20 +55,15 @@ def main():
 def load_and_clean_users(file_path):
 
 
-    df = pd.read_csv(file_path)
-    df = df.dropna()
-    conn = sqlite3.connect('users.db')
-    df.to_sql('users', conn, if_exists='replace', index=False)
+    print("TODO: write_user_analytics")
 
 
 
 # This function will load the callLogs.csv file into the callLogs table, discarding any records with incomplete data
 def load_and_clean_call_logs(file_path):
 
-    df = pd.read_csv(file_path)
-    df = df.dropna()
-    conn = sqlite3.connect('callLogs.db')
-    df.to_sql('users', conn, if_exists='replace', index=False)
+
+    print("TODO: write_user_analytics")
 
 # This function will write analytics data to testUserAnalytics.csv - average call time, and number of calls per user.
 # You must save records consisting of each userId, avgDuration, and numCalls
