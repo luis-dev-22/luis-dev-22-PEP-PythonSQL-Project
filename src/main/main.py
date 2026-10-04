@@ -1,6 +1,7 @@
 import csv
 import os
 import sqlite3
+import pandas as pd
 
 # Resolve the resources folder relative to this file, so paths work
 # no matter what directory the script is run from.
@@ -41,7 +42,7 @@ def main():
     write_ordered_calls(os.path.join(_RESOURCES_DIR, 'orderedCalls.csv'))
 
     # Helper method that prints the contents of the users and callLogs tables. Uncomment to see data.
-    # select_from_users_and_call_logs()
+    select_from_users_and_call_logs()
 
     # Close the cursor and connection. main function ends here.
     cursor.close()
@@ -54,7 +55,11 @@ def main():
 # This function will load the users.csv file into the users table, discarding any records with incomplete data
 def load_and_clean_users(file_path):
 
-    print("TODO: load_users")
+    df = pd.read_csv(file_path)
+    df = df.dropna()
+    conn = sqlite3.connect('users.db')
+    df.to_sql('users', conn, if_exists='replace', index=False)
+
 
 
 # This function will load the callLogs.csv file into the callLogs table, discarding any records with incomplete data
