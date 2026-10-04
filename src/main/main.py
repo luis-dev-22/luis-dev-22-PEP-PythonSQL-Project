@@ -1,6 +1,7 @@
 import csv
 import os
 import sqlite3
+import pandas as pd
 
 # Resolve the resources folder relative to this file, so paths work
 # no matter what directory the script is run from.
@@ -54,8 +55,9 @@ def main():
 # This function will load the users.csv file into the users table, discarding any records with incomplete data
 def load_and_clean_users(file_path):
 
+    with open(file_path, mode='r', encoding='utf-8') as file:
+        reader = csv.reader(file)
 
-    print("TODO: write_user_analytics")
 
 
 
