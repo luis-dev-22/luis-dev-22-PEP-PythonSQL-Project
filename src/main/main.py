@@ -54,11 +54,22 @@ def main():
 # This function will load the users.csv file into the users table, discarding any records with incomplete data
 def load_and_clean_users(file_path):
 
+    conn = sqlite3.connect("users.db")
+    cursor = conn.curosr()
+
     with open(file_path, mode='r', encoding='utf-8') as file:
         reader = csv.reader(file)
+        next(reader)
 
         for row in reader:
-            print(row)
+            if len(row) == 2 and row[0] and row[1]:
+
+                cursor.execute(
+                    "INSERT INTO users (firstName, lastName) VALUES (? ?)",
+                    (row[0], row[1])
+                )
+    conn.commit()
+    conn.close()
 
 
 
