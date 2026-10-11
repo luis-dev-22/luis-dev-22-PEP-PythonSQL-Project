@@ -66,12 +66,13 @@ def load_and_clean_users(file_path):
             print("read", row)
             if len(row) == 2 and row[0] and row[1]:
 
-                
+                """
                 
                 cursor.execute(
                     "INSERT INTO users (firstName, lastName) VALUES (?, ?)",
                     (row[0], row[1])
                 )
+                """
 
     conn.commit()
     conn.close()
