@@ -63,7 +63,7 @@ def load_and_clean_users(file_path):
 
         for row in reader:
             
-            if len(row) == 2 and row[0].strip() and row[1]:
+            if len(row) == 2 and row[0].strip() and row[1].strip():
                 print("read", row)
                 """
                 
