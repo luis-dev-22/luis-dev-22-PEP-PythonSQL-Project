@@ -83,7 +83,7 @@ def load_and_clean_call_logs(file_path):
             if len(row) == 5 and row[0].strip() and row[1].strip() and row[3].strip() and row[4].strip():
                 
                 cursor.execute(
-                    "INSERT INTO users (phoneNumber, startTime, endTime, direction, userId) VALUES (?, ?, ?, ?, ?)",
+                    "INSERT INTO callLogs (phoneNumber, startTime, endTime, direction, userId) VALUES (?, ?, ?, ?, ?)",
                     (row[0], row[1], row[2], row[3], row[4])
                 )
 
