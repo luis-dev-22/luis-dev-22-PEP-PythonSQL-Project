@@ -62,9 +62,9 @@ def load_and_clean_users(file_path):
         next(reader)
 
         for row in reader:
-            if len(row) == 2 and row[0] and row[1]:
+            #if len(row) == 2 and row[0] and row[1]:
 
-                print(row)
+                print(len(row))
                 cursor.execute(
                     "INSERT INTO users (firstName, lastName) VALUES (? ?)",
                     (row[0], row[1])
