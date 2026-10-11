@@ -55,7 +55,7 @@ def main():
 def load_and_clean_users(file_path):
 
     conn = sqlite3.connect("users.db")
-    cursor = conn.curosr()
+    cursor = conn.cursor()
 
     with open(file_path, mode='r', encoding='utf-8') as file:
         reader = csv.reader(file)
