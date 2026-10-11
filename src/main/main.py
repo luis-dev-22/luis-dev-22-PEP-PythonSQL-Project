@@ -62,7 +62,7 @@ def load_and_clean_users(file_path):
         next(reader)
 
         for row in reader:
-
+            print("read", row[0])
             
             if len(row) == 2 and row[0] and row[1]:
                 
