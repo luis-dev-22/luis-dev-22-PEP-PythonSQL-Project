@@ -69,8 +69,6 @@ def load_and_clean_users(file_path):
                 )
 
     conn.commit()
-    conn.close()
-
 
 
 
