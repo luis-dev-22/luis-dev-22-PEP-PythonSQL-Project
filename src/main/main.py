@@ -54,6 +54,8 @@ def main():
 # This function will load the users.csv file into the users table, discarding any records with incomplete data
 def load_and_clean_users(file_path):
 
+    main()
+
     conn = sqlite3.connect("users.db")
     cursor = conn.cursor()
 
