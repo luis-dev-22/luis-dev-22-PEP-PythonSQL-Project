@@ -103,7 +103,7 @@ def write_user_analytics(csv_file_path):
 
     rows = cursor.fetchall
 
-    if row:
+    if rows:
         for row in rows:
 
             ductionDict[row[0]] = row[1]
