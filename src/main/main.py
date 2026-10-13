@@ -156,8 +156,8 @@ def write_ordered_calls(csv_file_path):
 
         writer = csv.writer(file)
 
-        write.writerow([col[0] for col in cursor.description])
-        write.writerow(cursor.fetchall)
+        writer.writerow([col[0] for col in cursor.description])
+        writer.writerow(cursor.fetchall)
 
 
 # No need to touch the functions below!------------------------------------------
