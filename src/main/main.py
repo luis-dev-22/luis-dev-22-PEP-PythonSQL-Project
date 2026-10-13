@@ -111,7 +111,10 @@ def write_user_analytics(csv_file_path):
                 durationDict[row[0]] = []
 
             durationDict[row[0]].append(row[1])
-            
+    
+    for key in durationDict:
+
+        durationDict[key] = sum(durationDict[key]) / len(durationDict[key])
 
 
     print(durationDict)
