@@ -101,12 +101,18 @@ def write_user_analytics(csv_file_path):
 
     durationDict = {}
 
-    rows = cursor.fetchall()
+    rows = cursor.fetchall
 
     if rows:
         for row in rows:
+            
+            if row[0] not in durationDict:
 
-            durationDict[row[0]].append(row[1])
+                ductionDict[row[0]] = []
+
+            ductionDict[row[0]].append()
+            
+
 
     print(durationDict)
 
