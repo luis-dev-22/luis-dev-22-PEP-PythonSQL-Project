@@ -129,10 +129,10 @@ def write_user_analytics(csv_file_path):
 
     fieldnames = ["userId", "avgDuration", "numCalls"]
     
-    with open(csv_file_path, mode='w', encoding='utf-8') as file:
-        writer = csv.DictWriter(csv_file_path, fieldnames=fieldnames)
+    with open(csv_file_path, mode='w', encoding='utf-8', newline='') as file:
+        writer = csv.DictWriter(file, fieldnames=fieldnames)
         
-        writer = writeheader()
+        writer.writeheader()
 
         for userId in durationDict:
 
