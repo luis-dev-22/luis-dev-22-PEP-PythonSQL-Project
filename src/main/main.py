@@ -105,9 +105,11 @@ def write_user_analytics(csv_file_path):
 
     rows = cursor.fetchall()
 
+    print(rows)
+
     if rows:
         for row in rows:
-            print(row)
+            
             
             if row[0] not in durationDict:
 
