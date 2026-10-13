@@ -101,7 +101,7 @@ def write_user_analytics(csv_file_path):
 
     durationDict = {}
 
-    rows = cursor.fetchall
+    rows = cursor.fetchall()
 
     if rows:
         for row in rows:
