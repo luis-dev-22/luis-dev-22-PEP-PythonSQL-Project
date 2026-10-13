@@ -106,7 +106,7 @@ def write_user_analytics(csv_file_path):
     if rows:
         for row in rows:
 
-            durationDict[row[0]] = row[1]
+            durationDict[row[0]].appendrow[1]
 
     print(durationDict)
 
