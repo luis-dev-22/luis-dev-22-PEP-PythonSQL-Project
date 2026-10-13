@@ -127,14 +127,20 @@ def write_user_analytics(csv_file_path):
         durationDict[key] = sum(durationDict[key]) / len(durationDict[key])
 
 
+    fieldnames = ["userId", "avgDuration", "numCalls"]
+    
+    with open(csv_file_path, mode='w', encoding='utf-8') as file:
+        writer = csv.DictWriter(csv_file_path, fieldnames=fieldnames)
+        
+        writer = writeheader()
 
-    print(durationDict)
-    print("number of calls dict = :", numberCallsDict)
+        for userId in durationDict:
 
-
-
-
-    print("TODO: write_user_analytics")
+            writer.writerow({
+                "userId": userId,
+                "avgDuration": durationDict[userId],
+                "numCalls": numberCallsDict[userId]
+            })
 
 
 # This function will write the callLogs ordered by userId, then start time.
