@@ -101,6 +101,8 @@ def write_user_analytics(csv_file_path):
 
     durationDict = {}
 
+    numberCallsDict = {}
+
     rows = cursor.fetchall()
 
     if rows:
@@ -114,10 +116,19 @@ def write_user_analytics(csv_file_path):
     
     for key in durationDict:
 
+        if key not in numberCallsDict:
+            numberCallsDict[key] = len(durationDict[key])
+
+    for key in durationDict:
+
         durationDict[key] = sum(durationDict[key]) / len(durationDict[key])
 
 
+
     print(durationDict)
+    print("number of calls dict = :", numberCallsDict)
+
+
 
 
     print("TODO: write_user_analytics")
