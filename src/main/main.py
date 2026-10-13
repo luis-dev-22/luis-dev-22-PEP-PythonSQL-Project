@@ -110,7 +110,7 @@ def write_user_analytics(csv_file_path):
 
                 durationDict[row[0]] = []
 
-            ductionDict[row[0]].append(row[1])
+            durationDict[row[0]].append(row[1])
             
 
 
