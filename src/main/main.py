@@ -96,6 +96,21 @@ def load_and_clean_call_logs(file_path):
 # example: 1,105.0,4 - where 1 is the userId, 105.0 is the avgDuration, and 4 is the numCalls.
 def write_user_analytics(csv_file_path):
 
+
+    cursor.execute("SELECT userId, endTime - startTime FROM callLogs")
+
+    durationDict = {}
+
+    rows = cursor.fetchall
+
+    if row:
+        for row in rows:
+
+            ductionDict[row[0]] = row[1]
+
+    print(durationDict)
+
+
     print("TODO: write_user_analytics")
 
 
